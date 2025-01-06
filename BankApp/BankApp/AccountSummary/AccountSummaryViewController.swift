@@ -11,6 +11,7 @@ class AccountSummaryViewController: UIViewController {
 
     var accounts: [AccountSummaryCell.ViewModel] = []
 
+    
     var tableView = UITableView()
 
     override func viewDidLoad() {

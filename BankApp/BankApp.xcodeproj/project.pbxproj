@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		C5890BBC2D2C17EE0067E873 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C58687B32D1EF5D400092FD0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C58687BA2D1EF5D400092FD0;
+			remoteInfo = BankApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		C58687BB2D1EF5D400092FD0 /* BankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5890BB82D2C17EE0067E873 /* BankAppUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankAppUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -29,10 +40,22 @@
 			path = BankApp;
 			sourceTree = "<group>";
 		};
+		C5890BB92D2C17EE0067E873 /* BankAppUnitTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BankAppUnitTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C58687B82D1EF5D400092FD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5890BB52D2C17EE0067E873 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				C58687BD2D1EF5D400092FD0 /* BankApp */,
+				C5890BB92D2C17EE0067E873 /* BankAppUnitTests */,
 				C58687BC2D1EF5D400092FD0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				C58687BB2D1EF5D400092FD0 /* BankApp.app */,
+				C5890BB82D2C17EE0067E873 /* BankAppUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,6 +108,29 @@
 			productReference = C58687BB2D1EF5D400092FD0 /* BankApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C5890BB72D2C17EE0067E873 /* BankAppUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5890BC02D2C17EE0067E873 /* Build configuration list for PBXNativeTarget "BankAppUnitTests" */;
+			buildPhases = (
+				C5890BB42D2C17EE0067E873 /* Sources */,
+				C5890BB52D2C17EE0067E873 /* Frameworks */,
+				C5890BB62D2C17EE0067E873 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C5890BBD2D2C17EE0067E873 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C5890BB92D2C17EE0067E873 /* BankAppUnitTests */,
+			);
+			name = BankAppUnitTests;
+			packageProductDependencies = (
+			);
+			productName = BankAppUnitTests;
+			productReference = C5890BB82D2C17EE0067E873 /* BankAppUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -95,6 +143,11 @@
 				TargetAttributes = {
 					C58687BA2D1EF5D400092FD0 = {
 						CreatedOnToolsVersion = 16.2;
+					};
+					C5890BB72D2C17EE0067E873 = {
+						CreatedOnToolsVersion = 16.2;
+						LastSwiftMigration = 1620;
+						TestTargetID = C58687BA2D1EF5D400092FD0;
 					};
 				};
 			};
@@ -113,12 +166,20 @@
 			projectRoot = "";
 			targets = (
 				C58687BA2D1EF5D400092FD0 /* BankApp */,
+				C5890BB72D2C17EE0067E873 /* BankAppUnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C58687B92D1EF5D400092FD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5890BB62D2C17EE0067E873 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -135,7 +196,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C5890BB42D2C17EE0067E873 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C5890BBD2D2C17EE0067E873 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C58687BA2D1EF5D400092FD0 /* BankApp */;
+			targetProxy = C5890BBC2D2C17EE0067E873 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C58687CF2D1EF5D500092FD0 /* Debug */ = {
@@ -311,6 +387,43 @@
 			};
 			name = Release;
 		};
+		C5890BBE2D2C17EE0067E873 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.senakucukerdogan.BankAppUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BankApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BankApp";
+			};
+			name = Debug;
+		};
+		C5890BBF2D2C17EE0067E873 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.senakucukerdogan.BankAppUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BankApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BankApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -328,6 +441,15 @@
 			buildConfigurations = (
 				C58687CF2D1EF5D500092FD0 /* Debug */,
 				C58687D02D1EF5D500092FD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5890BC02D2C17EE0067E873 /* Build configuration list for PBXNativeTarget "BankAppUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5890BBE2D2C17EE0067E873 /* Debug */,
+				C5890BBF2D2C17EE0067E873 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
