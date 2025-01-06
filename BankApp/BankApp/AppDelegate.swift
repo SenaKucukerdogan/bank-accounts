@@ -12,14 +12,14 @@ let appColor: UIColor = .systemTeal
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-//    var hasOnboard = false
-
     let loginViewController = LoginViewController()
     let onboardingContainerViewController = OnboardingContainerViewController()
-//    let dummyViewController = DummyViewController()
     let mainViewController = MainViewController()
 
-    func application( _ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication
+            .LaunchOptionsKey: Any]?
     ) -> Bool {
 
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -29,29 +29,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loginViewController.delegate = self
         onboardingContainerViewController.delegate = self
         
-        let vc = mainViewController
-        vc.setStatusBar()
-        
+        displayLogin()
+        return true
+    }
+    
+    private func displayLogin() {
+        setRootViewController(loginViewController)
+    }
+    
+    private func displayNextScreen() {
+        if LocalState.hasOnboarded {
+            prepMainView()
+            setRootViewController(mainViewController)
+        } else {
+            setRootViewController(onboardingContainerViewController)
+        }
+    }
+    
+    private func prepMainView() {
+        mainViewController.setStatusBar()
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().backgroundColor = appColor
-        
-        window?.rootViewController = vc
-        
-        return true
-        
-/*
-//        dummyViewController.logoutDelegate = self
-
-        window?.rootViewController = AccountSummaryViewController()
-        // window?.rootViewController = mainViewController
-        //        window?.rootViewController = onboardingContainerViewController
-        //        window?.rootViewController = loginViewController
-        //        window?.rootViewController = LoginViewController()
-        //        window?.rootViewController = OnboardingContainerViewController()
-        //        window?.rootViewController = OnboardingViewController(heroImageName: "delorean", titleText: "Bankey is faster, easier to use, and has a brand new look and feel that will make you feel like you are back in 1989.")
-        mainViewController.selectedIndex = 1
-        return true
- */
     }
 }
 
@@ -73,27 +71,14 @@ extension AppDelegate {
 
 extension AppDelegate: LoginViewControllerDelegate {
     func didLogin() {
-        //window?.rootViewController = onboardingContainerViewController
-//        if hasOnboard {
-//            setRootViewController(dummyViewController)
-//        } else {
-//            setRootViewController(onboardingContainerViewController)
-//        }
-        if LocalState.hasOnboarded {
-//            setRootViewController(dummyViewController)
-            setRootViewController(mainViewController)
-        } else {
-            setRootViewController(onboardingContainerViewController)
-        }
-
+        displayNextScreen()
     }
 }
 
 extension AppDelegate: OnboardingContainerViewControllerDelegate {
     func didFinishOnboarding() {
-//        hasOnboard = true
         LocalState.hasOnboarded = true
-//        setRootViewController(dummyViewController)
+        prepMainView()
         setRootViewController(mainViewController)
     }
 }
